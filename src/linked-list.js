@@ -36,7 +36,18 @@ class LinkedList {
     return node.data;
     }
 
-    insertAt(index, data) {}
+    insertAt(index, data) {
+      var node = this._head;
+      for (var i = 0; i < index; i++) {
+        node = node.next;
+      }
+      const insertingNode = new Node(data, node.prev, node);
+      node.prev.next = insertingNode;
+      node.prev = insertingNode;
+      this.length++;
+      if (this._head === node) this._head = insertingNode;
+      if (this._tail === node) this._tail = insertingNode;
+    }
 
     isEmpty() {
       return this.length === 0;
