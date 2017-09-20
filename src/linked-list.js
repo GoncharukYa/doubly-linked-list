@@ -41,9 +41,10 @@ class LinkedList {
     }
 
     clear() {
-      this.length = 0;
       this._head = null;
       this._tail = null;
+      this.length = 0;
+
     }
 
     deleteAt(index) {}
