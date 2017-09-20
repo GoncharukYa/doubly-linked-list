@@ -136,15 +136,13 @@ describe('LinkedList', () => {
 
             list.reverse();
 
-
+            expect(list.head()).to.equal(6);
+            expect(list.tail()).to.equal(1);
 
             expect(list.at(1)).to.equal(5);
             expect(list.at(2)).to.equal(4);
             expect(list.at(3)).to.equal(3);
             expect(list.at(4)).to.equal(2);
-
-            expect(list.head()).to.equal(6);
-            expect(list.tail()).to.equal(1);
         });
     });
     describe('#indexOf', () => {
@@ -171,7 +169,12 @@ describe('LinkedList', () => {
             const list = new LinkedList();
 
             function fn() {
-                list.append(4).reverse().deleteAt(0).clear().insertAt(0, 3);
+                list.append(4);
+                list.reverse();
+                list.deleteAt(0);
+                list.clear();
+                list.insertAt(0, 3);
+                //.deleteAt(0).clear().insertAt(0, 3)
             }
 
             expect(fn).to.not.throw();

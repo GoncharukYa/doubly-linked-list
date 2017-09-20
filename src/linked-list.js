@@ -83,7 +83,6 @@ class LinkedList {
       while (node) {
         if (node.data === data) {
           return i;
-          break;
         }
         node = node.next;
         i++;
