@@ -19,10 +19,12 @@ class LinkedList {
     }
 
     head() {
+      if (!this._head) return null;
       return this._head.data;
     }
 
     tail() {
+      if (!this._tail) return null;
       return this._tail.data;
     }
 
