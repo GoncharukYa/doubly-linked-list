@@ -64,9 +64,32 @@ class LinkedList {
       this.length--;
     }
 
-    reverse() {}
+    reverse() {
+      let node = this._head;
+      while (node) {
+        let nextNode = node.next;
+        node.next = node.prev;
+        node.prev = nextNode;
+        node = nextNode;
+      }
+      node = this._head;
+      this._head = this._tail;
+      this._tail = node;
+    }
 
-    indexOf(data) {}
+    indexOf(data) {
+      let node = this._head;
+      let i = 0;
+      while (node) {
+        if (node.data === data) {
+          return i;
+          break;
+        }
+        node = node.next;
+        i++;
+      }
+      return -1;
+    }
 
     nodeAt(index) {
       var node = this._head;
