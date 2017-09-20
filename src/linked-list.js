@@ -26,7 +26,13 @@ class LinkedList {
       return this._tail.data;
     }
 
-    at(index) {}
+    at(index) {
+      var node = this._head;
+      for (var i = 0; i < index; i++) {
+        node = node.next;
+      }
+    return node.data;
+    }
 
     insertAt(index, data) {}
 
@@ -36,8 +42,8 @@ class LinkedList {
 
     clear() {
       this.length = 0;
-      this.head = null;
-      this.tail = null;
+      this._head = null;
+      this._tail = null;
     }
 
     deleteAt(index) {}
