@@ -19,11 +19,11 @@ class LinkedList {
     }
 
     head() {
-      return this._head;
+      return this._head.data;
     }
 
     tail() {
-      return this._tail;
+      return this._tail.data;
     }
 
     at(index) {}
