@@ -37,10 +37,7 @@ class LinkedList {
     }
 
     insertAt(index, data) {
-      var node = this._head;
-      for (var i = 0; i < index; i++) {
-        node = node.next;
-      }
+      var node = this.nodeAt(index);
       const insertingNode = new Node(data, node.prev, node);
       node.prev.next = insertingNode;
       node.prev = insertingNode;
@@ -60,11 +57,24 @@ class LinkedList {
 
     }
 
-    deleteAt(index) {}
+    deleteAt(index) {
+      var node = this.nodeAt(index);
+      node.prev.next = node.next;
+      node.next.prev = node.prev;
+      this.length--;
+    }
 
     reverse() {}
 
     indexOf(data) {}
+
+    nodeAt(index) {
+      var node = this._head;
+      for (var i = 0; i < index; i++) {
+        node = node.next;
+      }
+    return node;
+    }
 }
 
 module.exports = LinkedList;
