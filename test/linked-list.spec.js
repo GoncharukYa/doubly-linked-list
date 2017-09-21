@@ -169,12 +169,8 @@ describe('LinkedList', () => {
             const list = new LinkedList();
 
             function fn() {
-                list.append(4);
-                list.reverse();
-                list.deleteAt(0);
-                list.clear();
-                list.insertAt(0, 3);
-                //.deleteAt(0).clear().insertAt(0, 3)
+                list.append(4).reverse().deleteAt(0).clear().insertAt(0, 3);
+            
             }
 
             expect(fn).to.not.throw();
